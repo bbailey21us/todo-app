@@ -1,8 +1,8 @@
-$("li").on("click",function(){
+$("ul").on("click","li",function(){
     $(this).toggleClass("completed");
 });
 
-$("span").on("click",function(event){
+$("ul").on("click","span",function(event){
     $(this).parent().fadeOut(500,function(){
         $(this).remove();
     });
@@ -14,6 +14,6 @@ $('input[type="text"]').keypress(function(event){
     if (event.which===13){
       var todoText = $(this).val();
       $(this).val("");
-      $("ul").append("<li>"+todoText+"</li>")
+      $("ul").append("<li><span>X</span> "+todoText+"</li>")
     }
 });
